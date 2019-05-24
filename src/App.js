@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Axios from 'axios';
 import id from 'shortid';
 import actions from './store/actions/actions';
+import LandingView from './views/LandingView';
 
 const URL = 'https://pokeapi.co/api/v2/pokemon/';
 
@@ -33,27 +34,8 @@ class App extends Component {
 
   render() {
     const { pokemons } = this.state;
-    // console.log(pokemons);
-    return (
-      pokemons.length > 0 && (
-        <div>
-          {pokemons.map(pokemon => {
-            return <h1 key={id.generate()}> {pokemon.name} </h1>;
-          })}
-          <br />
-          <button
-            type="button"
-            onClick={() => {
-              this.props.dispatch({
-                type: 'test'
-              });
-            }}
-          >
-            Test Reducer
-          </button>
-        </div>
-      )
-    );
+
+    return <LandingView />;
   }
 }
 
