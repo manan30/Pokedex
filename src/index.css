@@ -1,13 +1,26 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu'), url(./assets/fonts/Ubuntu/Ubuntu-Bold.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-Bold.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-BoldItalic.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-Italic.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-Light.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-LightItalic.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-Medium.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-Regular.ttf) format('ttf'),
+    url(./assets/fonts/Ubuntu/Ubuntu-MediumItalic.ttf) format('ttf');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
