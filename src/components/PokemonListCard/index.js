@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CardBackground, CardText } from './styled';
+import { CardBackground } from './styled';
 
 const PokemonListCard = props => {
   const { name } = props;
-  return (
-    <CardBackground>
-      <CardText>Example Lastname </CardText>
-    </CardBackground>
-  );
+
+  return <CardBackground />;
 };
 
 PokemonListCard.propTypes = {
