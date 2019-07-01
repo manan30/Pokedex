@@ -1,19 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { CardBackground } from './styled';
 
 const PokemonListCard = props => {
-  const { name } = props;
-
+  // const { name } = props;
+  console.log(props);
   return <CardBackground />;
 };
 
-PokemonListCard.propTypes = {
-  name: PropTypes.string
-};
+// PokemonListCard.propTypes = {
+//   name: PropTypes.string
+// };
 
-PokemonListCard.defaultProps = {
-  name: ''
-};
+// PokemonListCard.defaultProps = {
+//   name: ''
+// };
 
 export default PokemonListCard;
