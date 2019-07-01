@@ -1,16 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PokemonListCard from './components/PokemonListCard';
+import Main from './views/Main';
 
 const App = () => {
   return (
     <div>
-      <PokemonListCard />
+      <Main />
     </div>
   );
 };
 
-const mapStateToProps = state => ({ state });
-
 export default App;
-// export default connect(mapStateToProps)(App);

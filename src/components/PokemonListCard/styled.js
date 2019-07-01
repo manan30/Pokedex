@@ -4,6 +4,7 @@ export const CardBackground = styled.section`
   position: relative;
   height: 64px;
   width: 100%;
+  margin-bottom: 16px;
 
   background: #ffffff;
   border-radius: 4px;
