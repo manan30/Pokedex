@@ -12,6 +12,6 @@ pipelines:
           - npm --version
           - npm install
           - npm test
-          - npm build
+          - npm run build
           - ls -al
           - ls -al build
