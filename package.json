@@ -2,6 +2,7 @@
   "name": "pokedex",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://manan30.github.io/Pokedex/",
   "dependencies": {
     "axios": "0.18.0",
     "prop-types": "15.7.2",
