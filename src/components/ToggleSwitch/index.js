@@ -44,7 +44,7 @@ ToggleSwitch.propTypes = {
 
 ToggleSwitch.defaultProps = {
   initial: false,
-  width: 80,
+  width: 55,
   padding: 3,
   ballColor: '#fff',
   ballColorActive: '#f5f5f5',

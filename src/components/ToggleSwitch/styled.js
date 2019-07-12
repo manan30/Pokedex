@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ToggleSwitchWrapper = styled.div`
   display: flex;
+  width: max-content;
   flex-direction: column;
 `;
 
@@ -12,7 +13,7 @@ export const Toggle = styled.div`
   position: relative;
   transform: translate3d(0, 0, 0);
   background-color: ${props => props.bgClear};
-  height: ${props => props.width / 2}px;
+  height: 40px;
   width: ${props => props.width}px;
   border-radius: ${props => props.width / 4}px;
   padding: ${props => props.padding}px;
@@ -41,6 +42,7 @@ export const Ripple = styled.div`
 `;
 
 export const ToggleBall = styled.div`
+  position: absolute;
   z-index: 2;
   border-radius: 50%;
   background-color: ${props => props.ballColor};
@@ -49,8 +51,8 @@ export const ToggleBall = styled.div`
   transition-delay: 0.1s;
   will-change: transform;
   border: 1px solid ${props => props.borderColor};
-  height: ${props => props.width / 2 - props.padding * 2}px;
-  width: ${props => props.width / 2 - props.padding * 2}px;
+  height: 35px;
+  width: 35px;
   transform: ${props =>
     props.toggled
       ? `translateX(${props.width - props.width / 2}px)`
