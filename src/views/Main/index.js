@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import API from '../../utils/api';
@@ -16,46 +16,38 @@ import {
   LoadingSpinnerContainer
 } from './styled';
 
-class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false
-    };
-  }
+const Main = props => {
+  const [loading, setLoading] = useState(false);
+  const { pokemons, fetchPokemons } = props;
 
-  componentDidMount() {
-    const { fetchPokemons } = this.props;
+  useEffect(() => {
+    console.log('Main');
     fetchPokemons(true);
-  }
+  }, [fetchPokemons]);
 
-  render() {
-    const { pokemons, fetchPokemons } = this.props;
-    const { loading } = this.state;
-    return (
-      <ScreenWrapper>
-        <ThemeToggleContainer />
-        <SearchBarContainer>
-          <SearchBar />
-        </SearchBarContainer>
-        <InfiniteListContainer spinnerLoading={loading}>
-          <InfiniteList
-            toggleSpinner={status => {
-              this.setState({ loading: status });
-            }}
-            pokemons={pokemons}
-            fetchPokemons={fetchPokemons}
-          />
-        </InfiniteListContainer>
-        {loading && (
-          <LoadingSpinnerContainer>
-            <LoadingSpinner />
-          </LoadingSpinnerContainer>
-        )}
-      </ScreenWrapper>
-    );
-  }
-}
+  return (
+    <ScreenWrapper>
+      <ThemeToggleContainer />
+      <SearchBarContainer>
+        <SearchBar />
+      </SearchBarContainer>
+      <InfiniteListContainer spinnerLoading={loading}>
+        <InfiniteList
+          toggleSpinner={status => {
+            setLoading(status);
+          }}
+          pokemons={pokemons}
+          fetchPokemons={fetchPokemons}
+        />
+      </InfiniteListContainer>
+      {loading && (
+        <LoadingSpinnerContainer>
+          <LoadingSpinner />
+        </LoadingSpinnerContainer>
+      )}
+    </ScreenWrapper>
+  );
+};
 
 const mapStateToProps = state => ({ ...state });
 

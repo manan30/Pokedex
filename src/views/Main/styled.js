@@ -32,15 +32,13 @@ export const SearchBarContainer = styled.section`
 
 export const InfiniteListContainer = styled.section`
   height: ${props =>
-    props.spinnerLoading ? 'calc(100% - 264px)' : 'calc(100% - 220px)'};
+    props.spinnerLoading ? 'calc(100% - 270px)' : 'calc(100% - 226px)'};
   margin: 32px 0 0 16px;
 `;
 
 export const LoadingSpinnerContainer = styled.section`
   position: absolute;
+  bottom: 0;
   left: 50%;
-  margin-top: 15px;
   transform: translateX(-50%) translateY(-50%);
-
-  background: white;
 `;

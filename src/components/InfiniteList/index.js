@@ -1,49 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem';
 
 import ComponentWrapper from './styled';
 
-class InfiniteList extends Component {
-  handleScroll = e => {
-    const { toggleSpinner } = this.props;
-    const element = e.target;
+const loading = false;
 
-    if (
-      element.scrollHeight - element.scrollTop === element.clientHeight ||
-      element.scrollHeight - element.scrollTop === element.clientHeight + 1
-    ) {
-      toggleSpinner(true);
-      this.fetchNewPokemons();
-    }
-  };
+const fetchNewPokemons = cb => {
+  const { fetchPokemons, toggleSpinner } = cb;
+  setTimeout(() => {
+    toggleSpinner(false);
+    fetchPokemons(false);
+  }, 2000);
+};
 
-  loadPokemons = () => {
-    const { pokemons } = this.props;
-    console.log(pokemons);
+const handleScroll = (e, cb) => {
+  const element = e.target;
+  const { toggleSpinner } = cb;
 
-    return pokemons.map((item, i) => {
-      const k = i;
-      return <ListItem key={k}></ListItem>;
-    });
-  };
-
-  fetchNewPokemons = () => {
-    const { fetchPokemons, toggleSpinner } = this.props;
-    setTimeout(() => {
-      fetchPokemons(false);
-      toggleSpinner(false);
-    }, 4000);
-  };
-
-  render() {
-    return (
-      <ComponentWrapper onScroll={this.handleScroll}>
-        {this.loadPokemons()}
-      </ComponentWrapper>
-    );
+  if (
+    (element.scrollHeight - element.scrollTop === element.clientHeight ||
+      element.scrollHeight - element.scrollTop === element.clientHeight + 1) &&
+    !loading
+  ) {
+    toggleSpinner(true);
+    fetchNewPokemons(cb);
   }
-}
+};
+
+const loadPokemons = pokemons => {
+  return pokemons.map((item, i) => {
+    const k = i;
+    return <ListItem key={k}></ListItem>;
+  });
+};
+
+const InfiniteList = props => {
+  const { pokemons, fetchPokemons, toggleSpinner } = props;
+
+  return (
+    <ComponentWrapper
+      onScroll={e => {
+        handleScroll(e, { fetchPokemons, toggleSpinner });
+      }}
+    >
+      {loadPokemons(pokemons)}
+    </ComponentWrapper>
+  );
+};
 
 InfiniteList.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.any),
