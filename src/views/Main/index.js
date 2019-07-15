@@ -21,7 +21,6 @@ const Main = props => {
   const { pokemons, fetchPokemons } = props;
 
   useEffect(() => {
-    console.log('Main');
     fetchPokemons(true);
   }, [fetchPokemons]);
 

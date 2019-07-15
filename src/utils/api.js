@@ -16,4 +16,13 @@ const loadPokemons = (initialLoad = false) => {
   };
 };
 
-export default { loadPokemons };
+const getPokemonDetails = url => {
+  return dispatch => {
+    return axios
+      .get(url)
+      .then(resp => dispatch(actions.fetchDetails(resp.data)))
+      .catch(err => console.log(err));
+  };
+};
+
+export default { loadPokemons, getPokemonDetails };

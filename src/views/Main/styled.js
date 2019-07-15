@@ -11,14 +11,14 @@ export const ScreenWrapper = styled.section`
 export const ThemeToggleContainer = styled.section`
   height: 50px;
   width: 64px;
-  margin: 48px 16px 0 auto;
+  margin: 48px 0 0 auto;
 
   background-color: black;
 `;
 
 export const SearchBarContainer = styled.section`
   height: 64px;
-  margin: 32px 16px 0 16px;
+  margin-top: 32px;
   padding: 0 16px;
 
   background: #ffffff;
@@ -33,7 +33,7 @@ export const SearchBarContainer = styled.section`
 export const InfiniteListContainer = styled.section`
   height: ${props =>
     props.spinnerLoading ? 'calc(100% - 270px)' : 'calc(100% - 226px)'};
-  margin: 32px 0 0 16px;
+  margin-top: 32px;
 `;
 
 export const LoadingSpinnerContainer = styled.section`

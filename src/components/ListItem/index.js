@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CardBackground, CardImage, CardTextContainer } from './styled';
+import { CardBackground, CardText } from './styled';
 
 const ListItem = props => {
   const { name } = props;
 
   return (
     <CardBackground>
-      <CardImage />
-      <CardTextContainer />
+      <CardText />
     </CardBackground>
   );
 };
