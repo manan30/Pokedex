@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const ScreenWrapper = styled.section`
   height: 100vh;
-  width: calc(100vw - 40px);
+  width: calc(100vw - 64px);
   overflow: hidden;
 
-  padding: 0 20px;
+  padding: 0 32px;
 `;
 
 export const ThemeToggleContainer = styled.section`

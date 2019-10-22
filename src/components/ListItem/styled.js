@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const CardBackground = styled.section`
-  position: relative;
-  width: calc(100% - 16px);
   height: 48px;
   margin-bottom: 16px;
+  width: calc(100vw - 16px);
 
   flex-grow: 1;
 
@@ -21,14 +20,9 @@ export const CardBackground = styled.section`
     transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
   } */
 
-  &:hover {
-    transform: scale(1.02, 1.02);
-    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
-  }
-
   transform: scale(1, 1);
-  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out,
-    width 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+
   z-index: 1;
 `;
 
